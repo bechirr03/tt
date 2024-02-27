@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifiereventController">
+
+    <children>
+        <Label layoutX="42.0" layoutY="55.0" prefHeight="38.0" prefWidth="122.0" text="Nom" />
+        <Label layoutX="42.0" layoutY="110.0" prefHeight="38.0" prefWidth="122.0" text="Description" />
+        <Label layoutX="42.0" layoutY="161.0" prefHeight="38.0" prefWidth="122.0" text="Categorie" />
+        <Label layoutX="42.0" layoutY="213.0" prefHeight="38.0" prefWidth="122.0" text="nombre" />
+        <Label layoutX="42.0" layoutY="16.0" prefHeight="38.0" prefWidth="122.0" text="Image" />
+        <TextField fx:id="i" layoutX="165.0" layoutY="23.0" prefHeight="26.0" prefWidth="192.0" />
+        <TextField fx:id="p" layoutX="165.0" layoutY="219.0" prefHeight="26.0" prefWidth="192.0" />
+        <TextField fx:id="d" layoutX="165.0" layoutY="116.0" prefHeight="26.0" prefWidth="192.0" />
+        <TextField fx:id="n" layoutX="165.0" layoutY="61.0" prefHeight="26.0" prefWidth="192.0" />
+        <Button fx:id="annuler" layoutX="93.0" layoutY="289.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #f44336;" text="Annuler" />
+        <Button fx:id="enr" layoutX="253.0" layoutY="289.0" mnemonicParsing="false" onAction="#Update" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #008CBA;" text="Enregistrer" />
+        <ChoiceBox fx:id="c" layoutX="164.0" layoutY="167.0" prefHeight="26.0" prefWidth="192.0" />
+    </children>
+
+</AnchorPane>
