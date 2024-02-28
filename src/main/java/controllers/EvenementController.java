@@ -31,6 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+
 public class EvenementController implements Initializable {
 
 
@@ -141,20 +142,7 @@ public void initialize(URL url, ResourceBundle rb) {
 }
 
 
-    @FXML
-    public void chercher(){
-        String ch=cher.getText();
-        ServiceEvenement sm = new ServiceEvenement();
-        List<Evenement> evenementsList;
-        evenementsList = sm.chercherEvenement(ch);
-        i.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Image"));
-        n.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Nom"));
-        d.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Description"));
-        c.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Categorie"));
-        p.setCellValueFactory(new PropertyValueFactory<Evenement, Float>("nbr"));
-        ObservableList<Evenement> evenementObservableList = FXCollections.observableList(evenementsList);
-        T.setItems(evenementObservableList);
-    }
+
 
     @FXML
     private void ajouter(ActionEvent event)  throws IOException  {
@@ -227,4 +215,22 @@ public void initialize(URL url, ResourceBundle rb) {
         imageView.setPreserveRatio(true);
         return imageView;
     }
+    @FXML
+    private void ajouter_categorie (ActionEvent event)  throws IOException  {
+        Parent root = FXMLLoader.load(getClass().getResource("/Cat.fxml")) ;
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void voir_reclamation (ActionEvent event)  throws IOException  {
+        Parent root = FXMLLoader.load(getClass().getResource("/ReclamationAdmin.fxml")) ;
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

@@ -1,6 +1,21 @@
 package controllers;
 
 
+import models.reclamation;
+import models.type_reclamation;
+
+import models.Evenement;
+
+import models.Categorie;
+import services.ServiceReclamation;
+import services.ServiceTypeReclamation;
+import services.ServiceEvenement;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,20 +25,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import models.Evenement;
-import models.reclamation;
-import models.type_reclamation;
-import services.ServiceEvenement;
-import services.ServiceReclamation;
-import services.ServiceTypeReclamation;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.ResourceBundle;
 
 
 
@@ -51,7 +61,9 @@ public class ajoutReclamationController implements Initializable {
     @FXML
     private Button logoutButton;
 
-
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 // Ajout de choix d'Evenement dans la ComboBox ajoutTevent
@@ -174,6 +186,14 @@ public class ajoutReclamationController implements Initializable {
 
 
 
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
 
+        Parent root = FXMLLoader.load(getClass().getResource("/evenement.fxml")) ;
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

@@ -113,7 +113,7 @@
                 <HBox prefHeight="9.0" prefWidth="328.0" />
                 <HBox prefHeight="9.0" prefWidth="328.0" />
                 <ButtonBar prefHeight="40.0" prefWidth="200.0" />
-                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="194.0" text="logout" />
+                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="194.0" text="to admin page" />
             </children>
         </VBox>
     </children>
