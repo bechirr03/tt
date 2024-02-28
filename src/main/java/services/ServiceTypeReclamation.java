@@ -11,7 +11,7 @@ import models.type_reclamation;
         import java.sql.SQLException;
         import java.sql.Statement;
 
-public class ServiceTypeReclamation implements ITypeReclamation<type_reclamation> {
+public class ServiceTypeReclamation implements ITypeReclamationn<type_reclamation> {
     Connection cnx = MyDatabase.getInstance().getConnection();
 
     public ServiceTypeReclamation() {

@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -72,15 +73,8 @@ public class ModifiereventController implements Initializable {
 
     @FXML
     private void GoBack(ActionEvent event) throws IOException {
-           /* content.getChildren().removeAll(content.getChildren());
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("evenement.fxml"));
-                Parent root = loader.load();
-                content.getChildren().add(root);
-            } catch (Exception ex) {
-                Logger.getLogger(CatController.class.getName()).log(Level.SEVERE, null, ex);
-            } */
-        Parent root = FXMLLoader.load(getClass().getResource("/evenement.fxml")) ;
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/evenement.fxml"))) ;
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

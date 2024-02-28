@@ -12,7 +12,7 @@
     <Label layoutX="49.0" layoutY="55.0" prefHeight="30.0" prefWidth="94.0" text="Image" />
     <Label layoutX="49.0" layoutY="104.0" prefHeight="30.0" prefWidth="94.0" text="Nom" />
     <Label layoutX="49.0" layoutY="150.0" prefHeight="30.0" prefWidth="94.0" text="Description" />
-    <Label layoutX="49.0" layoutY="197.0" prefHeight="30.0" prefWidth="94.0" text="Prix" />
+    <Label layoutX="49.0" layoutY="197.0" prefHeight="30.0" prefWidth="94.0" text="nbr participenr" />
     <Label layoutX="49.0" layoutY="240.0" prefHeight="30.0" prefWidth="94.0" text="Categorie" />
     <TextField fx:id="n" layoutX="176.0" layoutY="107.0" />
     <TextField fx:id="d" layoutX="176.0" layoutY="153.0" />

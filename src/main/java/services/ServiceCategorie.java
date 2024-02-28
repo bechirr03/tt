@@ -122,7 +122,20 @@ public class ServiceCategorie implements ICategorie<Categorie> {
     }
 
     @Override
-    public Categorie getbyid(int id) {
-        return null;
+    public Categorie getbyid(int id){
+        Categorie c = new Categorie();
+        try {
+            String req ="SELECT * FROM categorie where id = '"+id+"%' ";
+
+            Statement st = con.createStatement();
+            ResultSet rs= st.executeQuery(req);
+            while (rs.next()){
+                c.setId(rs.getInt(1));
+                c.setNom(rs.getString(2));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return c;
     }
 }

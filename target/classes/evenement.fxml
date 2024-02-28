@@ -15,8 +15,8 @@
             <TableColumn fx:id="n" prefWidth="62.39996337890625" text="Nom" />
             <TableColumn fx:id="d" prefWidth="114.40003967285156" text="Description" />
             <TableColumn fx:id="c" prefWidth="104.0" text="Categorie" />
-            <TableColumn fx:id="p" prefWidth="70.39996337890625" text="Prix" />
-            <TableColumn fx:id="i" prefWidth="241.5999755859375" text="Image" />
+            <TableColumn fx:id="p" prefWidth="152.00006103515625" text="nombre participent" />
+            <TableColumn fx:id="i" prefWidth="159.99993896484375" text="Image" />
         </columns>
     </TableView>
     <Button fx:id="a" layoutX="579.0" layoutY="42.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: #f44336; -fx-border-radius: 10%;" text="Ajouter" />

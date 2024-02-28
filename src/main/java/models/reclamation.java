@@ -1,14 +1,14 @@
 
 package models;
 
-import models.User;
+import models.Evenement;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 
 
 public class reclamation {
      private int id;
-    private User id_user_id;
+    private Evenement Id_evenement_id;
     private type_reclamation id_tr_id;
     private Timestamp date;
     private String email;
@@ -24,12 +24,12 @@ public class reclamation {
         this.id = id;
     }
 
-    public User getId_user_id() {
-        return id_user_id;
+    public Evenement getId_evenement_id() {
+        return Id_evenement_id;
     }
 
-    public void setId_user_id(User id_user_id) {
-        this.id_user_id = id_user_id;
+    public void setId_evenement_id(Evenement id_evenement_id) {
+        Id_evenement_id = id_evenement_id;
     }
 
     public type_reclamation getId_tr_id() {
@@ -81,9 +81,9 @@ public class reclamation {
     }
 
 
-    public reclamation(int id, User id_user_id, type_reclamation id_tr_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
+    public reclamation(int id, Evenement Id_evenement_id, type_reclamation id_tr_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
         this.id = id;
-        this.id_user_id = id_user_id;
+        this.Id_evenement_id = Id_evenement_id;
         this.id_tr_id = id_tr_id;
         this.date = date;
         this.email = email;
@@ -91,8 +91,8 @@ public class reclamation {
         this.cmnt = cmnt;
         this.etat = "traitement en cours";
     }
-        public reclamation(User id_user_id, type_reclamation id_tr_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
-        this.id_user_id = id_user_id;
+        public reclamation(Evenement Id_evenement_id, type_reclamation id_tr_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
+        this.Id_evenement_id = Id_evenement_id;
         this.id_tr_id = id_tr_id;
         this.date = date;
         this.email = email;
@@ -103,9 +103,9 @@ public class reclamation {
     public reclamation(){
     }
 
-    public reclamation(int id, User id_user_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
+    public reclamation(int id, Evenement Id_evenement_id, Timestamp date, String email, int telephone, String cmnt, String etat) {
         this.id = id;
-        this.id_user_id = id_user_id;
+        this.Id_evenement_id = Id_evenement_id;
         this.date = date;
         this.email = email;
         this.telephone = telephone;
@@ -113,8 +113,8 @@ public class reclamation {
         this.etat = "traitement en cours";
     }
 
-    public reclamation( User id_user_id, type_reclamation id_tr_id, String email, int telephone, String cmnt) {
-        this.id_user_id = id_user_id;
+    public reclamation( Evenement Id_evenement_id, type_reclamation id_tr_id, String email, int telephone, String cmnt) {
+        this.Id_evenement_id = Id_evenement_id;
         this.id_tr_id = id_tr_id;
         this.email = email;
         this.telephone = telephone;
@@ -124,7 +124,7 @@ public class reclamation {
 
     @Override
     public String toString() {
-        return "reclamation{" + "id=" + id + ", id_user_id=" + id_user_id + ", id_tr_id=" + id_tr_id + ", date=" + date + ", email=" + email + ", telephone=" + telephone + ", cmnt=" + cmnt + ", etat=" + etat + "\n";
+        return "reclamation{" + "id=" + id + ", Id_evenement_id=" + Id_evenement_id + ", id_tr_id=" + id_tr_id + ", date=" + date + ", email=" + email + ", telephone=" + telephone + ", cmnt=" + cmnt + ", etat=" + etat + "\n";
     }
 
 public Timestamp getCurrentTimestamp() {

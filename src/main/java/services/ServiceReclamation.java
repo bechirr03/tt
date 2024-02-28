@@ -3,7 +3,7 @@ package services;
 
 import models.reclamation;
 import models.type_reclamation;
-import models.User;
+import models.Evenement;
 import utils.MyDatabase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,16 +17,16 @@ public class ServiceReclamation implements IReclamation<reclamation> {
     Connection cnx = MyDatabase.getInstance().getConnection();
     List<type_reclamation> type_reclamation = new ArrayList();
     public final String SELECT_type_BY_ID = "SELECT * FROM type_reclamation WHERE id = ? LIMIT 1";
-    public final String SELECT_user_BY_ID = "SELECT * FROM user WHERE id = ? LIMIT 1";
+    public final String SELECT_evenement_BY_ID = "SELECT * FROM evenement WHERE id = ? LIMIT 1";
 
     public ServiceReclamation() {
     }
 
     public void ajouter_reclamation(reclamation r) {
         try {
-            String qry = "INSERT INTO `reclamation`( `id_user_id`,`id_tr_id`,`date`,`email`,`telephone`,`cmnt`,`etat`) VALUES (?,?,?,?,?,?,?)";
+            String qry = "INSERT INTO `reclamation`( `id_evenement_id`,`id_tr_id`,`date`,`email`,`telephone`,`cmnt`,`etat`) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = this.cnx.prepareStatement(qry);
-            ps.setInt(1, r.getId_user_id().getId());
+            ps.setInt(1, r.getId_evenement_id().getId());
             ps.setInt(2, r.getId_tr_id().getId());
             ps.setTimestamp(3, r.getCurrentTimestamp());
             ps.setString(4, r.getEmail());
@@ -53,7 +53,7 @@ public class ServiceReclamation implements IReclamation<reclamation> {
             while(rs.next()) {
                 reclamation r = new reclamation();
                 r.setId(rs.getInt(1));
-                r.setId_user_id(this.getUserById(rs.getInt(2)));
+                r.setId_evenement_id(this.getevenementById(rs.getInt(2)));
                 r.setId_tr_id(this.gettypeById(rs.getInt(3)));
                 r.setDate(rs.getTimestamp(4));
                 r.setEmail(rs.getString(5));
@@ -88,17 +88,17 @@ public class ServiceReclamation implements IReclamation<reclamation> {
         return type;
     }
 
-    public User getUserById(int id) {
-        User ur = new User();
+    public Evenement getevenementById(int id) {
+        Evenement ur = new Evenement();
 
         try {
-            PreparedStatement st = this.cnx.prepareStatement("SELECT * FROM user WHERE id = ? LIMIT 1");
+            PreparedStatement st = this.cnx.prepareStatement("SELECT * FROM evenement WHERE id = ? LIMIT 1");
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
 
             while(rs.next()) {
                 ur.setId(rs.getInt("id"));
-                ur.setUserName(rs.getString("user_name"));
+                ur.setNom(rs.getString("nom"));
             }
         } catch (SQLException | IllegalArgumentException | NullPointerException var5) {
             System.out.println(var5.getMessage());
@@ -141,7 +141,7 @@ public class ServiceReclamation implements IReclamation<reclamation> {
 
             while(rs.next()) {
                 r.setId(rs.getInt(1));
-                r.setId_user_id(this.getUserById(rs.getInt(2)));
+                r.setId_evenement_id(this.getevenementById(rs.getInt(2)));
                 r.setId_tr_id(this.gettypeById(rs.getInt(3)));
                 r.setDate(rs.getTimestamp(4));
                 r.setEmail(rs.getString(5));

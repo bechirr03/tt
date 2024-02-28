@@ -7,6 +7,8 @@ public class Evenement {
     private Categorie categorie;
     private float nbr;
 
+
+
     public Evenement() {
     }
 
@@ -58,13 +60,20 @@ public class Evenement {
         this.image = image;
     }
 
-    public float
-    getnbr() {
+    public float getnbr() {
         return nbr;
     }
 
-    public void setnbr(float prix) {
-        this.nbr = prix;
+    public void setnbr(float nbr) {
+        this.nbr = nbr;
+    }
+
+    public float getNbr() {
+        return nbr;
+    }
+
+    public void setNbr(float nbr) {
+        this.nbr = nbr;
     }
 
     @Override

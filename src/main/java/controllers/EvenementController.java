@@ -203,7 +203,8 @@ public void initialize(URL url, ResourceBundle rb) {
     public void chercher(){
         String ch=cher.getText();
         ServiceEvenement sm = new ServiceEvenement();
-        List<Evenement> evenementsList = sm.chercherEvenement(ch);
+        List<Evenement> evenementsList;
+        evenementsList = sm.chercherEvenement(ch);
         i.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Image"));
         n.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Nom"));
         d.setCellValueFactory(new PropertyValueFactory<Evenement, String>("Description"));

@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 public class MainFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/evenement.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/TypeReclamation.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Gérer personnes");
+        primaryStage.setTitle("app");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

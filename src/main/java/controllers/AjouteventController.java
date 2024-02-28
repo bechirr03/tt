@@ -23,7 +23,8 @@ import models.Categorie;
         import java.nio.file.Paths;
         import java.nio.file.StandardCopyOption;
         import java.util.List;
-        import java.util.ResourceBundle;
+import java.util.Objects;
+import java.util.ResourceBundle;
         import java.util.logging.Level;
         import java.util.logging.Logger;
         import javafx.collections.FXCollections;
@@ -82,8 +83,7 @@ public class AjouteventController implements Initializable {
     }
     ServiceCategorie sc = new ServiceCategorie();
     @FXML
-    /*
-    private void ajouterBOUTTON(ActionEvent event) {
+    /*private void ajouterBOUTTON(ActionEvent event) {
 
         String Image=path.getText();
         String nom=n.getText();
@@ -114,7 +114,7 @@ public class AjouteventController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(CatController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }*/
+    } */
     private void ajouterBOUTTON(ActionEvent event) {
         try {
             String Image = path != null ? path.getText() : null;
@@ -129,7 +129,6 @@ public class AjouteventController implements Initializable {
             List<Categorie> lc = sc.afficherCategorie();
             for (Categorie a : lc) {
                 if (categorie != null && categorie.equals(a.getNom())) {
-
                     caaa = a;
                     break;
                 }
@@ -140,7 +139,7 @@ public class AjouteventController implements Initializable {
             Evenement m = new Evenement(nom, caaa, description, Image, nbrf);
             sm.ajouterEvenement(m);
             content.getChildren().removeAll(content.getChildren());
-            Parent root = FXMLLoader.load(getClass().getResource("/evenement.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/evenement.fxml")));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
