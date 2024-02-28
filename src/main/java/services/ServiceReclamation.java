@@ -22,11 +22,15 @@ public class ServiceReclamation implements IReclamation<reclamation> {
     public ServiceReclamation() {
     }
 
+
+
     public void ajouter_reclamation(reclamation r) {
         try {
             String qry = "INSERT INTO `reclamation`( `id_evenement_id`,`id_tr_id`,`date`,`email`,`telephone`,`cmnt`,`etat`) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = this.cnx.prepareStatement(qry);
-            ps.setInt(1, r.getId_evenement_id().getId());
+
+                ps.setInt(1, r.getId_evenement_id().getId());
+
             ps.setInt(2, r.getId_tr_id().getId());
             ps.setTimestamp(3, r.getCurrentTimestamp());
             ps.setString(4, r.getEmail());
@@ -39,8 +43,8 @@ public class ServiceReclamation implements IReclamation<reclamation> {
             System.out.println("erreur ");
             System.out.println(var4.getMessage());
         }
-
     }
+
 
     public List<reclamation> afficher_reclamation() {
         List<reclamation> reclamation = new ArrayList();
@@ -150,7 +154,7 @@ public class ServiceReclamation implements IReclamation<reclamation> {
                 r.setEtat(rs.getString(8));
             }
         } catch (SQLException var6) {
-            System.out.println("ahla");
+            System.out.println("sahel howa");
         }
 
         return r;
@@ -164,7 +168,7 @@ public class ServiceReclamation implements IReclamation<reclamation> {
             st.executeUpdate(req);
             System.out.println(" reclamation traite!");
         } catch (SQLException var4) {
-            System.out.println("ya");
+            System.out.println("ya mnsada9ech ");
         }
 
     }

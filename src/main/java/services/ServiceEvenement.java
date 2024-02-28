@@ -180,5 +180,24 @@ public class ServiceEvenement implements IService<Evenement> {
         return m;
     }
 
+    public List<String> getallnamesEvenement() {
+        List<String> categories = new ArrayList<>();
+
+        try {
+            String req ="SELECT nom FROM evenement ";
+
+            Statement st = cnx.createStatement();
+            ResultSet rs= st.executeQuery(req);
+            while (rs.next()){
+                String n=(rs.getString("nom"));
+                categories.add(n);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return categories;
+    }
+
 
 }

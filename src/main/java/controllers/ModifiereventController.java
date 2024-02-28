@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controllers;
 
 import javafx.scene.Node;
@@ -32,11 +28,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author MSI
- */
+
 public class ModifiereventController implements Initializable {
 
     @FXML
@@ -82,34 +74,7 @@ public class ModifiereventController implements Initializable {
     }
 
     @FXML
-   /* private void Update(ActionEvent event) {
-        String image=i.getText();
-        String nom=n.getText();
-        String description=d.getText();
-        String nbr= p.getText();
-        System.out.println(nbr);
-         Categorie caaa = new Categorie();
-       String categorie=c.getValue();
-       List<Categorie> lc = sc.afficherCategorie();
-       for (Categorie a:lc){
-           if (categorie.equals(a.getNom())){
-               caaa=a;
-               break;
-           }
-       }
-        ServiceEvenement sm = new ServiceEvenement();
-        float nbrf=Float.parseFloat(nbr);
-        Evenement m = new Evenement(nom,caaa,description,image,nbrf);
-        sm.modifierEvenement(m);
-        content.getChildren().removeAll(content.getChildren()); 
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Evenement.fxml"));
-                Parent root = loader.load();
-                content.getChildren().add(root);
-            } catch (Exception ex) {
-                Logger.getLogger(CatController.class.getName()).log(Level.SEVERE, null, ex);
-            } 
-    }*/
+
 
     private void Update(ActionEvent event) throws SQLException, IOException {
         String image=i.getText();

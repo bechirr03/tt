@@ -54,7 +54,7 @@ public class TypeReclamationController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//Type Reclamation
+
         TableColumn<type_reclamation, String> colType = (TableColumn<type_reclamation, String>) table.getColumns().get(0);
         colType.setCellValueFactory(new PropertyValueFactory<>("nom"));
 
@@ -123,7 +123,7 @@ public class TypeReclamationController implements Initializable {
             ftnom1.setText("");
         }
     }
-//lota
+
 
 
 }

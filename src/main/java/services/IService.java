@@ -20,4 +20,6 @@ public interface IService<T> {
     default Evenement getbyidEvenement(int id) throws SQLException {
         return null;
     }
+
+    List<String> getallnamesEvenement() throws SQLException;
 }

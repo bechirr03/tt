@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TypeReclamationController">
+    <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="933.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="88.0" layoutY="324.0" prefHeight="48.0" prefWidth="207.0" text="Ajouter un nouveau Type" textAlignment="CENTER" textFill="#386ba9">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ftnom" alignment="CENTER" layoutX="111.0" layoutY="399.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnType" defaultButton="true" layoutX="260.0" layoutY="454.0" mnemonicParsing="false" onAction="#saveType" style="-fx-background-color: #e57f47;" text="Ajouter">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Pane layoutX="400.0" prefHeight="583.0" prefWidth="532.0">
+               <children>
+                  <TableView fx:id="table" layoutX="219.0" layoutY="146.0" prefHeight="328.0" prefWidth="234.0">
+                     <columns>
+                        <TableColumn prefWidth="233.20001220703125" text="Liste types reclamations" />
+                     </columns>
+                  </TableView>
+                  <CubicCurve controlX1="-8.5999755859375" controlX2="49.0" controlY1="-64.5999984741211" controlY2="44.199981689453125" endX="21.0" endY="416.20001220703125" fill="#7cb4ea" layoutX="-21.0" layoutY="167.0" startX="20.20001220703125" startY="-167.0" stroke="BLACK" />
+                  <Label layoutX="60.0" layoutY="69.0" text="Selectionner un type " textFill="#f70000">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="33.0" prefHeight="70.0" prefWidth="257.0" text="Type selectionné" textAlignment="CENTER" textFill="#386ba9">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ftnom1" alignment="CENTER" editable="false" layoutX="111.0" layoutY="115.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnTypeSupp" defaultButton="true" layoutX="233.0" layoutY="213.0" mnemonicParsing="false" onAction="#SuppType" prefWidth="94.0" style="-fx-background-color: #e76e6e;" text="supprimer" textFill="#1e1d1d">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnTypeModifier" defaultButton="true" layoutX="200.0" layoutY="171.0" mnemonicParsing="false" onAction="#ModifierType" style="-fx-background-color: #a1c784;" text="Modifier" textFill="#121312">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEnregistrerType" defaultButton="true" layoutX="281.0" layoutY="171.0" mnemonicParsing="false" onAction="#EnregistrerType" style="-fx-background-color: #a1c784;" text="Enregistrer" textFill="#121312">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+
+</AnchorPane>
