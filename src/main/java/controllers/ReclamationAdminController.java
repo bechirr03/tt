@@ -19,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.util.ResourceBundle;
@@ -165,7 +166,7 @@ public class ReclamationAdminController implements Initializable {
     }
 
     @FXML
-    void ajouter_type(ActionEvent event) {
+    void ajouter_type(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/TypeReclamation.fxml")) ;
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
