@@ -29,7 +29,52 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import java.net.URL;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Properties;
+import java.util.ResourceBundle;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart.Series;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.HTMLEditor;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class ReclamationAdminController implements Initializable {
 
@@ -41,6 +86,9 @@ public class ReclamationAdminController implements Initializable {
 
     @FXML
     private Button btnRecSupp;
+
+    @FXML
+    private HTMLEditor mail;
 
     @FXML
     private Button btnRecSupp1;
@@ -145,10 +193,117 @@ public class ReclamationAdminController implements Initializable {
 
 
 
+    }
 
 
+    @FXML
+    public void traiter() {
+        int myIndex = this.table1.getSelectionModel().getSelectedIndex();
+        int id = Integer.parseInt(String.valueOf(((reclamation)this.table1.getItems().get(myIndex)).getId()));
+        String ma = ((reclamation)this.table1.getItems().get(myIndex)).getEmail();
+        String content = this.mail.getHtmlText();
+        Document doc = Jsoup.parse(content);
+        String formattedText = doc.body().text();
+        this.envoyeremail(ma, formattedText, id);
+        ServiceReclamation rec = new ServiceReclamation();
+        ObservableList<reclamation> obsListRec = FXCollections.observableArrayList(rec.afficher_reclamation());
+        this.table1.setItems(obsListRec);
+        this.mail.setHtmlText("");
+    }
+
+
+    public void envoyeremail(String mail, String reponse, int id) {
+        String to = mail;
+        String from = "bboughalmi8@gmail.com";
+        String password = "bnvpqsupwhqfroeg";
+
+        String host = "smtp.gmail.com";
+        String port = "587";
+
+        // Set up properties for the SMTP connection
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        // Create a new Session object
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(from, password);
+                    }
+                });
+
+        try {
+            // Create a new message
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(to));
+            message.setSubject("Traiement de votre Reclamation");
+            message.setText(reponse);
+
+            // Send the message
+            Transport.send(message);
+
+            System.out.println("Message sent successfully!");
+            // Modifier le champ etat
+            ServiceReclamation sr = new ServiceReclamation();
+            System.out.println(id);
+            sr.TrRec(id);
+
+        } catch (MessagingException e) {
+            System.out.println("Failed to send message: " + e.getMessage());
+        }
+    }
+
+
+
+
+
+
+    private void ModifierRec(ActionEvent event) {
+        reclamation r = (reclamation)this.table1.getSelectionModel().getSelectedItem();
+        if (r != null) {
+            this.selectEmail.setEditable(true);
+            this.selectEmail.setText(r.getEmail());
+            this.selectTel.setEditable(true);
+            this.selectTel.setText(Integer.toString(r.getTelephone()));
+            this.selectCmnt.setEditable(true);
+            this.selectCmnt.setText(r.getCmnt());
+
+        }
 
     }
+
+    private void EnregistrerRec(ActionEvent event) {
+        reclamation r = (reclamation)this.table1.getSelectionModel().getSelectedItem();
+        if (r != null) {
+            r.setEmail(this.selectEmail.getText());
+            r.setTelephone(Integer.parseInt(this.selectTel.getText()));
+            r.setCmnt(this.selectCmnt.getText());
+
+            ServiceReclamation rec = new ServiceReclamation();
+            rec.modifier_reclamation(r);
+            ObservableList<reclamation> obsListRec = FXCollections.observableArrayList(rec.afficher_reclamation());
+            this.table1.setItems(obsListRec);
+            this.selectEmail.setEditable(false);
+            this.selectEmail.setText("");
+            this.selectTel.setEditable(false);
+            this.selectTel.setText("");
+            this.selectCmnt.setEditable(false);
+            this.selectCmnt.setText("");
+
+        }
+
+    }
+
+
+
+
+
     @FXML
     private void SuppRec(ActionEvent event) {
         reclamation r = (reclamation)this.table1.getSelectionModel().getSelectedItem();
