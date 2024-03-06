@@ -36,10 +36,7 @@ public class Mail {
             message.setSubject(subject);
             message.setText(body);
 
-            try (Transport transport = session.getTransport("smtp")) {
-                transport.connect();
-                transport.sendMessage(message, message.getAllRecipients());
-            }
+
 
             System.out.println("Email sent successfully!");
 

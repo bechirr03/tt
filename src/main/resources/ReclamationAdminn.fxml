@@ -18,7 +18,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.CubicCurve?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.web.HTMLEditor?>
 
 <AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TypeReclamationController">
    <children>
@@ -184,7 +183,6 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <HTMLEditor fx:id="mail" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="497.0" layoutY="66.0" prefHeight="218.0" prefWidth="514.0" />
                            </children>
                         </AnchorPane>
                      </content>
