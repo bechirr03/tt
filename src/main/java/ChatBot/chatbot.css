@@ -1,0 +1,84 @@
+
+.chat-history {
+    -fx-background-color: transparent;
+    -fx-padding: 10 30 10 20;
+    -fx-background-image: url("file:/C:/Users/Ons/Desktop/iCity_App/Icon/wallpaper3.jpg");
+}
+
+.chat-history .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+    -fx-border-radius: 10;
+    -fx-font-size: 15px;
+    -fx-wrap-text: true;
+    -fx-pref-height: -1;
+    -fx-opacity: 0;
+}
+
+.chat-history .list-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-border-color: rgba(53, 58, 86, 0.67);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-style: solid;
+
+}
+
+.chat-history .list-cell:filled {
+    -fx-opacity: 1;
+}
+
+.chat-history .list-cell:even {
+    -fx-background-color: transparent;
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-border-color: rgba(19, 20, 38, 0.67);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
+    -fx-background-radius: 16px;
+}
+
+.chat-history .list-cell .text {
+    -fx-fill: #000;
+}
+
+
+
+.input-container {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.user-input {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-prompt-text-fill: #999;
+    -fx-background-color: #ffffff, #ffffff;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 5px;
+    -fx-border-color: rgba(53, 58, 86, 0.67);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-border-style: solid;
+    -fx-background-radius: 16px;}
+
+.send-button {
+    -fx-border-color: rgba(53, 58, 86, 0.67);
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-background-color: #39cdcb;
+}
+
+
+.root{
+    -fx-border-width: 3px;
+    -fx-border-color: rgba(0, 1, 19, 0.67);
+    -fx-border-radius: 20;
+    -fx-background-color: #ffffff;
+}

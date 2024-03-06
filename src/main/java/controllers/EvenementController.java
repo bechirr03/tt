@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -200,7 +201,7 @@ public void initialize(URL url, ResourceBundle rb) {
             if (content != null) {
                 content.getChildren().removeAll(content.getChildren());
             }
-            Parent root = FXMLLoader.load(getClass().getResource("/Modifierevent.fxml")) ;
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Modifierevent.fxml"))) ;
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -217,7 +218,7 @@ public void initialize(URL url, ResourceBundle rb) {
     }
     @FXML
     private void ajouter_categorie (ActionEvent event)  throws IOException  {
-        Parent root = FXMLLoader.load(getClass().getResource("/Cat.fxml")) ;
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Cat.fxml"))) ;
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -226,7 +227,7 @@ public void initialize(URL url, ResourceBundle rb) {
 
     @FXML
     private void voir_reclamation (ActionEvent event)  throws IOException  {
-        Parent root = FXMLLoader.load(getClass().getResource("/ReclamationAdmin.fxml")) ;
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ReclamationAdminn.fxml"))) ;
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="root" dividerPositions="0.5" orientation="VERTICAL" prefHeight="477.0" prefWidth="525.0" styleClass="root" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/ChatBot/chatbot.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatBot.ChatController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" stylesheets="@../java/ChatBot/chatbot.css">
+         <children>
+            <ListView fx:id="chatHistory" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="-10.0" layoutY="29.0" prefHeight="412.0" prefWidth="544.0" scaleShape="false" styleClass="chat-history" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/ChatBot/chatbot.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></ListView>
+            <Label layoutX="180.0" layoutY="-6.0" prefHeight="40.0" prefWidth="163.0" text="ICity ChatBot" textAlignment="CENTER" textFill="#39cdcb">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="514.0">
+         <children>
+            <Button fx:id="sendButton" layoutX="404.0" layoutY="2.0" onAction="#sendButtonClicked" prefHeight="34.0" prefWidth="96.0" styleClass="send-button" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/ChatBot/chatbot.css" text="Send">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="userInput" layoutX="10.0" layoutY="2.0" prefHeight="34.0" prefWidth="379.0" styleClass="user-input" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/ChatBot/chatbot.css" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

@@ -1,6 +1,8 @@
 package controllers;
 
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 import models.reclamation;
 import models.type_reclamation;
 
@@ -61,9 +63,8 @@ public class ajoutReclamationController implements Initializable {
     @FXML
     private Button logoutButton;
 
-    /**
-     * Initializes the controller class.
-     */
+    public static final String ACCOUNT_SID = "ACe68784a0d3f5c02eeea47547bfb21006";
+    public static final String AUTH_TOKEN = "b96629c9d0e480c9ab8510be06e13877";
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 // Ajout de choix d'Evenement dans la ComboBox ajoutTevent
@@ -142,6 +143,14 @@ public class ajoutReclamationController implements Initializable {
         r.setCmnt(ajoutCmnt.getText());
         r.setEtat("traitement en cours");
         re.ajouter_reclamation(r);
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+                        new com.twilio.type.PhoneNumber("+21692598384"),
+                        new com.twilio.type.PhoneNumber("+17179047143"),
+                        "      \"réclamation bien réussite  \"\n")
+                .create();
+
+        System.out.println(message.getSid());
         ObservableList<reclamation> obsListType = FXCollections.observableArrayList(re.afficher_reclamation());
         ajoutEmail.setText("");
         ajoutTel.setText("");

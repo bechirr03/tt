@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="604.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminController">
+   <children>
+      <VBox prefHeight="604.0" prefWidth="259.0">
+         <children>
+            <AnchorPane fx:id="side_ankerpane" prefHeight="604.0" prefWidth="293.0" styleClass="side_ankerpane" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+               <children>
+                  <Pane fx:id="inner_pane" layoutX="13.0" layoutY="253.0" prefHeight="66.0" prefWidth="234.0" styleClass="inner_pane" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+                     <children>
+                        <ImageView fitHeight="49.0" fitWidth="53.0" layoutX="18.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/black_user_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Pane fx:id="most_inner_pane" layoutX="185.0" layoutY="5.0" prefHeight="56.0" prefWidth="28.0" styleClass="most_inner_pane">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="44.0" layoutX="-5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/pngegg.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Label layoutX="78.0" layoutY="1.0" prefHeight="66.0" prefWidth="92.0" text="ADMIN">
+                           <font>
+                              <Font name="Century Gothic Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Circle fill="WHITE" layoutX="128.0" layoutY="122.0" radius="83.0" stroke="BLACK" strokeType="INSIDE" />
+                  <ImageView fitHeight="166.0" fitWidth="166.0" layoutX="45.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="84.0" layoutY="528.0" prefHeight="58.0" prefWidth="100.0" text="ICity" textFill="#06a4f9">
+                     <font>
+                        <Font name="Century Gothic Bold" size="44.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btn_show" layoutX="65.0" layoutY="392.0" prefHeight="34.0" prefWidth="138.0" styleClass="btn_workbench1"  text="Show " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="side_ankerpane1" layoutX="265.0" prefHeight="604.0" prefWidth="653.0" styleClass="side_ankerpane1" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+         <children>
+            <AnchorPane fx:id="side_ankerpane11" layoutX="20.0" layoutY="16.0" prefHeight="109.0" prefWidth="615.0" styleClass="side_ankerpane11" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="558.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/next.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_login" layoutX="548.0" layoutY="27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="59.0" styleClass="btn" text=" " textFill="#092d45">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+            <Circle fill="WHITE" layoutX="132.0" layoutY="130.0" radius="95.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="201.0" fitWidth="207.0" layoutX="29.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/black_user_icon.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btn_save" layoutX="265.0" layoutY="532.0" prefHeight="34.0" prefWidth="138.0" styleClass="btn_workbench1" text="Save changes" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="87.0" layoutY="226.0" prefHeight="40.0" prefWidth="145.0" text="Account details ">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Line endX="398.00006103515625" layoutX="186.0" layoutY="260.0" startX="-100.0" />
+            <TextField fx:id="Fname_textField" layoutX="81.0" layoutY="289.0" prefHeight="26.0" prefWidth="226.0" promptText="First name" text=" userFirstName" />
+            <TextField fx:id="cin_textField" layoutX="81.0" layoutY="346.0" prefHeight="26.0" prefWidth="226.0" promptText="Cin" text="userCin" />
+            <TextField fx:id="email_textField" layoutX="81.0" layoutY="404.0" prefHeight="26.0" prefWidth="226.0" promptText="Email" text="userEmail" />
+            <TextField fx:id="name_textField" layoutX="358.0" layoutY="288.0" prefHeight="26.0" prefWidth="226.0" promptText="Name" text="userName" />
+            <TextField fx:id="number_textField" layoutX="358.0" layoutY="345.0" prefHeight="26.0" prefWidth="226.0" promptText="Number" text="userNumber" />
+            <TextField fx:id="pass_textField" layoutX="358.0" layoutY="403.0" prefHeight="26.0" prefWidth="226.0" promptText="Password" text="userPassword" />
+            <Label layoutX="81.0" layoutY="270.0" text="First name :" textFill="#616161" />
+            <Label layoutX="83.0" layoutY="327.0" text="Cin :" textFill="#616161" />
+            <Label layoutX="83.0" layoutY="385.0" text="Email :" textFill="#616161" />
+            <Label layoutX="358.0" layoutY="270.0" text="Name :" textFill="#616161" />
+            <Label layoutX="358.0" layoutY="327.0" prefHeight="18.0" prefWidth="92.0" text="Phone number :" textFill="#616161" />
+            <Label layoutX="358.0" layoutY="385.0" text="Password :" textFill="#616161" />
+            <JFXButton fx:id="btn_delete" layoutX="426.0" layoutY="532.0" prefHeight="34.0" prefWidth="138.0" styleClass="btn_workbench1" text="Delete account" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="status_label" layoutX="205.0" layoutY="503.0" prefHeight="18.0" prefWidth="259.0" text=" " textFill="#3fcd28" />
+            <Label fx:id="fname_error" layoutX="146.0" layoutY="324.0" prefHeight="18.0" prefWidth="166.0" text=" " textFill="#C40D1C" />
+            <Label fx:id="name_error" layoutX="400.0" layoutY="324.0" text=" " textFill="#C40D1C" />
+            <Label fx:id="cin_error" layoutX="111.0" layoutY="381.0" text=" " textFill="#C40D1C" />
+            <Label fx:id="number_error" layoutX="450.0" layoutY="382.0" text=" " textFill="#C40D1C" />
+            <Label fx:id="email_error" layoutX="118.0" layoutY="439.0" text=" " textFill="#C40D1C" />
+            <Label fx:id="password_error" layoutX="415.0" layoutY="439.0" text=" " textFill="#C40D1C" />
+            <JFXButton fx:id="btn_add" layoutX="102.0" layoutY="532.0" prefHeight="34.0" prefWidth="138.0" styleClass="btn_workbench1" text="Add account" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="email_textField1" layoutX="81.0" layoutY="463.0" prefHeight="26.0" prefWidth="226.0" promptText="Email" text="userScore" />
+            <TextField fx:id="pass_textField1" layoutX="358.0" layoutY="462.0" prefHeight="26.0" prefWidth="226.0" promptText="Password" text="userMoney" />
+            <Label layoutX="83.0" layoutY="444.0" text="Score :" textFill="#616161" />
+            <Label layoutX="358.0" layoutY="444.0" text="Money :" textFill="#616161" />
+            <Label fx:id="admin_name" layoutX="313.0" layoutY="125.0" prefHeight="66.0" prefWidth="190.0" text="ADMIN NAME">
+               <font>
+                  <Font name="Century Gothic Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

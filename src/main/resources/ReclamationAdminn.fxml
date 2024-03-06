@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TypeReclamationController">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1050.0">
+         <children>
+            <Accordion prefHeight="719.0" prefWidth="1049.0">
+               <panes>
+                  <TitledPane prefHeight="200.0" prefWidth="200.0" text="Statistiques">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <LineChart fx:id="ChartMois" layoutX="476.0" layoutY="62.0" prefHeight="249.0" prefWidth="412.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <Label layoutX="518.0" layoutY="14.0" prefHeight="34.0" prefWidth="232.0" text="Nombre de Reclamation par mois" />
+                              <BarChart fx:id="ChartType" layoutX="59.0" layoutY="284.0" prefHeight="261.0" prefWidth="382.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                              <PieChart fx:id="ChartTraite" layoutX="609.0" layoutY="318.0" prefHeight="228.0" prefWidth="232.0" />
+                              <Label layoutX="147.0" layoutY="267.0" prefHeight="35.0" prefWidth="247.0" text="Nombre de Reclamation par type " />
+                              <Label fx:id="nbrT" layoutX="98.0" layoutY="84.0" prefHeight="38.0" prefWidth="236.0" />
+                              <Label fx:id="nbrR" layoutX="98.0" layoutY="134.0" prefHeight="38.0" prefWidth="236.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" prefHeight="491.0" prefWidth="722.0" text="Type Reclamation">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="653.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="88.0" layoutY="324.0" prefHeight="48.0" prefWidth="207.0" text="Ajouter un nouveau Type" textAlignment="CENTER" textFill="#386ba9">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="ftnom" alignment="CENTER" layoutX="111.0" layoutY="399.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnType" defaultButton="true" layoutX="260.0" layoutY="454.0" mnemonicParsing="false" onAction="#saveType" style="-fx-background-color: #e57f47;" text="Ajouter">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Pane layoutX="400.0" prefHeight="583.0" prefWidth="532.0">
+                                 <children>
+                                    <TableView fx:id="table" layoutX="219.0" layoutY="146.0" prefHeight="328.0" prefWidth="234.0">
+                                       <columns>
+                                          <TableColumn prefWidth="233.20001220703125" text="Liste types reclamations" />
+                                       </columns>
+                                    </TableView>
+                                    <CubicCurve controlX1="-8.5999755859375" controlX2="49.0" controlY1="-64.5999984741211" controlY2="44.199981689453125" endX="21.0" endY="416.20001220703125" fill="#7cb4ea" layoutX="-21.0" layoutY="167.0" startX="20.20001220703125" startY="-167.0" stroke="BLACK" />
+                                    <Label layoutX="60.0" layoutY="69.0" text="Selectionner un type " textFill="#f70000">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="33.0" prefHeight="70.0" prefWidth="257.0" text="Type selectionné" textAlignment="CENTER" textFill="#386ba9">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="ftnom1" alignment="CENTER" editable="false" layoutX="111.0" layoutY="115.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnTypeSupp" defaultButton="true" layoutX="233.0" layoutY="213.0" mnemonicParsing="false" onAction="#SuppType" prefWidth="94.0" style="-fx-background-color: #e76e6e;" text="supprimer" textFill="#1e1d1d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnTypeModifier" defaultButton="true" layoutX="200.0" layoutY="171.0" mnemonicParsing="false" onAction="#ModifierType" style="-fx-background-color: #a1c784;" text="Modifier" textFill="#121312">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnEnregistrerType" defaultButton="true" layoutX="280.0" layoutY="171.0" mnemonicParsing="false" onAction="#EnregistrerType" style="-fx-background-color: #a1c784;" text="Enregistrer" textFill="#121312">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" prefHeight="506.0" prefWidth="1018.0" text="Reclamation">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="661.0" prefWidth="1059.0">
+                           <children>
+                              <Pane layoutX="-1.0" layoutY="362.0" prefHeight="302.0" prefWidth="1010.0">
+                                 <children>
+                                    <TableView fx:id="table1" cache="true" layoutX="17.0" layoutY="6.0" prefHeight="252.0" prefWidth="986.0">
+                                       <columns>
+                                          <TableColumn fx:id="UserCol" prefWidth="150.0" text="user" />
+                                          <TableColumn fx:id="TypeCol" minWidth="0.0" prefWidth="120.0" text="type rec" />
+                                          <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="146.40005493164062" text="date" />
+                                          <TableColumn fx:id="emailCol" prefWidth="145.5999755859375" text="email" />
+                                          <TableColumn fx:id="telCol" prefWidth="114.4000244140625" text="telephone" />
+                                          <TableColumn fx:id="cmntCol" prefWidth="162.39996337890625" text="cmnt" />
+                                          <TableColumn fx:id="etatCol" prefWidth="146.39990234375" text="état" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" prefHeight="70.0" prefWidth="304.0" text="Reclamation selectionnée" textAlignment="CENTER" textFill="#386ba9">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnRecSupp" defaultButton="true" layoutX="343.0" layoutY="270.0" mnemonicParsing="false" onAction="#SuppRec" prefWidth="94.0" style="-fx-background-color: #e76e6e;" text="supprimer" textFill="#1e1d1d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="selectEmail" editable="false" layoutX="44.0" layoutY="115.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="selectTel" alignment="CENTER" editable="false" layoutX="254.0" layoutY="115.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="selectEtat" alignment="CENTER" editable="false" layoutX="254.0" layoutY="73.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <CubicCurve controlX1="-8.5999755859375" controlX2="49.0" controlY1="-64.5999984741211" controlY2="44.199981689453125" endX="24.20001220703125" endY="109.39999389648438" fill="#e8ad7b" layoutX="452.0" layoutY="226.0" startX="15.399993896484375" startY="-227.00003051757812" stroke="BLACK" />
+                              <TextArea fx:id="selectCmnt" editable="false" layoutX="44.0" layoutY="164.0" prefHeight="84.0" prefWidth="378.0" />
+                              <Label layoutX="397.0" layoutY="336.0" prefHeight="26.0" prefWidth="178.0" text="Selectionner une ligne" textFill="#f70000">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="selectTypeRec" alignment="CENTER" editable="false" layoutX="44.0" layoutY="73.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <Button defaultButton="true" layoutX="889.0" layoutY="322.0" mnemonicParsing="false" onAction="#traiter" prefWidth="94.0" style="-fx-background-color: #e76e6e;" text="traiter" textFill="#1e1d1d">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="585.0" prefHeight="70.0" prefWidth="304.0" text="Traiter par mail" textAlignment="CENTER" textFill="#386ba9">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <HTMLEditor fx:id="mail" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="497.0" layoutY="66.0" prefHeight="218.0" prefWidth="514.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </panes>
+            </Accordion>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

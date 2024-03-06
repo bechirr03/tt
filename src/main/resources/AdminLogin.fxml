@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminLoginController">
+   <children>
+      <AnchorPane fx:id="side_ankerpane" layoutX="4.0" layoutY="5.0" prefHeight="301.0" prefWidth="478.0" styleClass="side_ankerpane" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+         <children>
+            <AnchorPane fx:id="button_signup1" layoutX="169.0" layoutY="245.0" prefHeight="40.0" prefWidth="139.0" styleClass="side_ankerpane11" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+               <children>
+                  <JFXButton fx:id="adminLogin" layoutX="18.0" layoutY="6.0" onAction="#verifierAdmin" prefHeight="28.0" prefWidth="103.0" styleClass="btn" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <PasswordField fx:id="AdminCode_textField" layoutX="95.0" layoutY="192.0" prefHeight="40.0" prefWidth="287.0" promptText="Entre your code" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your verification code to access administrative privileges ,Welcome, HashTag team !" wrappingWidth="384.3834228515625">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#39cdcb" layoutX="48.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, HashTag team !" wrappingWidth="374.78338623046875">
+               <font>
+                  <Font name="Century Gothic Bold" size="29.0" />
+               </font>
+            </Text>
+            <Label fx:id="status_label" layoutX="185.0" layoutY="164.0" prefHeight="18.0" prefWidth="110.0" text=" " textFill="#d92a2a" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

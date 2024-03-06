@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpController">
+   <children>
+      <ImageView fitHeight="699.0" fitWidth="583.0" layoutX="356.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/wallpaper3.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="cin_textField" layoutX="521.0" layoutY="177.0" prefHeight="28.0" prefWidth="287.0" promptText="Entre your CIN number" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label layoutX="533.0" layoutY="151.0" prefHeight="27.0" prefWidth="79.0" text="CIN:" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="421.0" layoutY="19.0" prefHeight="76.0" prefWidth="254.0" text="Sign up">
+         <font>
+            <Font name="Century Gothic Bold" size="56.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="97.0" prefHeight="40.0" prefWidth="262.0" text="Welcome ! Let's get started !">
+         <font>
+            <Font name="Century Gothic Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="button_signup" layoutX="550.0" layoutY="545.0" prefHeight="40.0" prefWidth="230.0" styleClass="side_ankerpane111111" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+         <children>
+            <JFXButton fx:id="btn_signup" layoutX="15.0" layoutY="6.0" onAction="#handleSignUpButtonAction" prefHeight="27.0" prefWidth="202.0" styleClass="btn" text="Sign up" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="name_textField" layoutX="522.0" layoutY="237.0" prefHeight="28.0" prefWidth="287.0" promptText="Entre your name" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label layoutX="534.0" layoutY="211.0" prefHeight="27.0" prefWidth="79.0" text="Name:" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Fname_textField" layoutX="522.0" layoutY="297.0" prefHeight="28.0" prefWidth="287.0" promptText="Entre your first name" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label layoutX="531.0" layoutY="271.0" prefHeight="27.0" prefWidth="79.0" text="First name:" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="number_textField" layoutX="520.0" layoutY="358.0" prefHeight="28.0" prefWidth="287.0" promptText="Entre your phone numbre" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label layoutX="535.0" layoutY="331.0" prefHeight="27.0" prefWidth="139.0" text="Phone numbre:" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="email_textField" layoutX="521.0" layoutY="417.0" prefHeight="28.0" prefWidth="287.0" promptText="Entre your email" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label layoutX="532.0" layoutY="390.0" prefHeight="27.0" prefWidth="79.0" text="Email :" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="533.0" layoutY="450.0" prefHeight="27.0" prefWidth="151.0" text="New password:" textFill="#333333">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="side_ankerpane" layoutX="-21.0" prefHeight="604.0" prefWidth="399.0" styleClass="side_ankerpane" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css">
+         <children>
+            <Circle fill="WHITE" layoutX="204.0" layoutY="237.0" radius="122.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="244.0" fitWidth="256.0" layoutX="81.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="138.0" layoutY="426.0" prefHeight="86.0" prefWidth="151.0" text="ICity" textFill="#39cdcb">
+               <font>
+                  <Font name="Century Gothic Bold" size="66.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="505.0" text="Une ville intelligente, connectée et vivante !" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <PasswordField fx:id="password_textfield" layoutX="521.0" layoutY="478.0" prefHeight="34.0" prefWidth="287.0" promptText="Entre your password" styleClass="password-field" stylesheets="file:/C:/Users/Ons/Desktop/iCity_App/src/main/java/CSS/style.css" />
+      <Label fx:id="cin_error" layoutX="572.0" layoutY="155.0" prefHeight="18.0" prefWidth="330.0" textFill="RED" />
+      <Label fx:id="name_error" layoutX="588.0" layoutY="215.0" prefHeight="18.0" prefWidth="307.0" textFill="RED" />
+      <Label fx:id="fname_error" layoutX="613.0" layoutY="275.0" prefHeight="18.0" prefWidth="230.0" textFill="RED" />
+      <Label fx:id="number_error" layoutX="648.0" layoutY="336.0" prefHeight="18.0" prefWidth="230.0" textFill="RED" />
+      <Label fx:id="email_error" layoutX="588.0" layoutY="394.0" prefHeight="18.0" prefWidth="230.0" textFill="RED" />
+      <Label fx:id="password_error" layoutX="645.0" layoutY="455.0" prefHeight="18.0" prefWidth="262.0" textFill="RED" />
+      <JFXButton fx:id="btn_login" layoutX="854.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#naviguezVersLogin" prefHeight="51.0" prefWidth="59.0" styleClass="btn" text=" " textFill="#092d45">
+         <font>
+            <Font name="Century Gothic Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="853.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Ons/Desktop/iCity_App/Icon/next.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="returnToLogin" layoutX="843.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#naviguezVersLogin" prefHeight="51.0" prefWidth="59.0" styleClass="btn" text=" " textFill="#092d45">
+         <font>
+            <Font name="Century Gothic Bold Italic" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
